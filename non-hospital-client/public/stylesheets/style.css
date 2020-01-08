@@ -1,0 +1,69 @@
+html {
+  font-size: 10px;
+}
+body {
+  font-size: 2rem;
+  margin: 0;
+  padding: 0;
+  font-family: "Lucida Console", Monaco, monospace;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+a, a:visited, a:link {
+  color: rgb(1, 46, 172);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+form {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+}
+
+input {
+  margin-bottom: 1rem;
+}
+
+label {
+  margin-bottom: 1rem;
+}
+
+table {
+  border-collapse: collapse;
+  border: 1px solid black;
+  width: 80%;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: rgb(235, 235, 235);
+}
+
+.field {
+  grid-column: span 2;
+  display: grid;
+}
+
+#nav {
+  grid-row: 1;
+  display: flex;
+  justify-content: center;
+}
+
+#nav a {
+  width: 30rem;
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+#main {
+  grid-row: 2;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#emergency input, #nonEmergency input {
+  width: 30rem;
+}

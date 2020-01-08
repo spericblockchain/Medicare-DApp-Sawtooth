@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Health | Home
+  </title>
+   <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
+</head>
+
+<body  onload="viewPatient(event)" class="jumbotron text-center bg-light">
+<div class="jumbotron bg-light">
+  <h1 class="text-success display-3">HEALTH<span class="text-warning">CARE</span> </h1>
+  <h2 class="text-secondary">Doctor &nbsp &nbsp ||  &nbsp&nbsp Patient </h2><br>
+  <nav class="navbar navbar-expand-sm bg-light navbar-light btn btn-outline-success">
+      <ul class="navbar-nav">
+        <li class="nav-item ">
+          <a class="nav-link " href="/doctorMainView">Home </a>
+        </li>
+        <li class="nav-item active ">
+          <a class="nav-link" href="/doctorView">View Patient</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/addReport">Add Report</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" onclick="logout(event)">Logout</a>
+        </li>
+      </ul>
+    </nav>
+    <br>
+
+<div class="jumbotron border border-success bg-light">
+    <table class="table table-sm table-bordered">
+        {{!-- <thead class="bg-dark text-success"> --}}
+            <tr>
+                <th class="bg-dark text-success">Patient Name</th>
+                <td id="name"></td>
+            </tr>
+            <tr>
+                <th class="bg-dark text-success">Age</th>
+                <td id="age"></td>
+            </tr>
+            <tr>
+                <th class="bg-dark text-success">Sex</th>
+                <td id="sex"></td>
+            </tr>     
+            <tr>
+                <th class="bg-dark text-success">Blood Group</th>
+                <td id="blood"></td>
+            </tr>
+            <tr>
+                <th class="bg-dark text-success">Address</th>
+                <td id="address"></td>
+            </tr>
+            <tr>
+                <th class="bg-dark text-success">Contact Number</th>
+                <td id="contactNo"></td>
+            </tr>
+    </table>
+    <br>
+    <table id="report" class="table table-sm table-bordered">
+        <thead >
+            <tr>
+                <th>Reason for Visit</th>
+                <th>Doctor Name</th>
+                <th>Prescription</th>
+                <th>Number of Days</th>
+                <th>Reports to be taken</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+</div>
+  <script src="/javascripts/main.js"></script>
+ </body>
+
+</html>

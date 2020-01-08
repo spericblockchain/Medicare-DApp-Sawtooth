@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Health | Home
+  </title>
+   <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
+</head>
+
+<body onload="viewData(event)" class="jumbotron text-center bg-light">
+<div class="jumbotron bg-light">
+  <h1 class="text-success display-3">HEALTH<span class="text-warning">CARE</span> </h1>
+  <h2 class="text-secondary">Hospital Client</h2>
+  <nav class="navbar navbar-expand-sm bg-light navbar-light btn btn-outline-success">
+      <form action="" method="POST"> <ul class="navbar-nav">
+        <li class="nav-item active ">
+            <a class="nav-link text-success" href="/mainView">Home</a>
+        </li>
+        <li class="nav-item ">
+             <a class="nav-link" href="/doctorAdd">Add New Doctor</a>
+        </li>
+        <li class="nav-item ">
+            <a class="nav-link" href="/doctorView">View and Edit</a>
+
+        </li>
+        <li class="nav-item ">
+             <a class="nav-link" href="/search">Search</a>
+        </li>
+       <li class="nav-item ">
+         <a class="nav-link" onclick="logout(event)">Logout</a>
+        </li>
+      </ul>
+      </form>
+    </nav>
+    <br>
+<div class="jumbotron border border-success bg-light">
+    <table id="doctors" class="table table-sm table-bordered">
+        <thead class="bg-dark text-success">
+            <tr>
+                <th>Doctor Name</th>
+                <th>Hospital Name</th>
+                <th>Department</th>
+                <th>Register Number</th>
+                <th>Contact No.</th>
+                <th>Rating</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+    </table>
+</div>
+</div>
+<script src="/javascripts/main.js"></script>
+ </body>
+
+</html>

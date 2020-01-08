@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Health | Home
+  </title>
+   <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<style>
+.results {
+  font-size: 0;
+  padding-bottom: 16px;
+}
+.results-content {
+  font-size: 13px;
+  display: inline-block;
+  margin-left: 20px;
+  vertical-align: top;
+  background: url('https://i.stack.imgur.com/rwkqF.png') 0 36px repeat-x;
+  width: 185px;
+  height: 35px;
+}
+.results .results-content span.stars span {
+  background: url('https://i.stack.imgur.com/rwkqF.png') 0 -36px repeat-x;
+  display: inline-block;
+  width: 50px;
+  height: 35px;
+}
+</style>
+<!-- Latest compiled JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"
+src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+</script> 
+
+</head>
+
+<body class="jumbotron text-center bg-light">
+<div class="jumbotron bg-light">
+  <h1 class="text-success display-3">HEALTH<span class="text-warning">CARE</span> </h1>
+  <h2 class="text-secondary">Organisation Client</h2>
+  <nav class="navbar navbar-expand-sm bg-light navbar-light btn btn-outline-success">
+      <ul class="navbar-nav">
+        <li class="nav-item  ">
+            <a class="nav-link " href="/mainView">Home</a>
+        </li>
+        <li class="nav-item ">
+             <a class="nav-link" href="/hospitalAdd">Add New Hospital</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link text-success" href="/view">View and Edit</a>
+        </li>
+        <li class="nav-item ">
+             <a class="nav-link" href="/search">Search</a>
+        </li>
+       <li class="nav-item ">
+            <a class="nav-link" onclick="logout(event)">Logout</a>
+        </li>
+      </ul>
+    </nav>
+    <br>
+
+<div class="jumbotron border border-success bg-light">
+    <table class="table table-sm table-bordered">
+        <thead class="bg-dark text-success">
+            <tr>
+                <th>Name</th>
+                <th>Contact No.</th>
+                <th>Address</th>
+                <th>Register Number</th>
+                <th>State Address</th>
+                <th>Rating</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#hospitals}}
+            <tr>
+                <td>
+                    <input type="text" name="hospName" id="hospName" value="{{hospitalName}}" placeholder="{{hospitalName}}" disabled>
+                </td>
+                <td>
+                    <input type="text" name="contactNo" id="contactNo" value="{{contactNo}}" placeholder="{{contactNo}}" disabled>
+                </td>
+                <td>
+                    <input type="text" name="address" id="address" value="{{address}}" placeholder="{{address}}" disabled>
+                </td>
+                <td>
+                    <input type="text" name="registerNo" id="registerNo" value="{{registerNo}}" placeholder="{{registerNo}}" disabled>
+                </td>
+                <td>
+                    <input type="text" name="stateAdd" id="stateAdd" value="{{hospitalStateAddress}}" placeholder="{{hospitalStateAddress}}" disabled>
+                </td>
+                <td>
+                  <div class="results">
+                    <div class="results-content">
+                        <span title = "{{rating}}"class="stars">{{rating}}</span>
+                    </div>
+                  </div>
+                    
+                </td>
+                <td><a href="/viewed?address={{hospitalStateAddress}}">Update</a></td>
+                <td><a href="/delete?address={{hospitalStateAddress}}">Delete</a></td>
+            </tr>
+            {{/hospitals}}
+        </tbody>
+    </table>
+    
+</div>
+</div>
+<script src="/javascripts/main.js"></script>
+<script> 
+    $.fn.stars = function() { 
+  return this.each(function() {
+    // Get the value
+    var val = parseFloat($(this).html()); 
+    // Make sure that the value is in 0 - 5 range, multiply to get width
+    var size = Math.max(0, (Math.min(5, val))) * 36.5; 
+    // Create stars holder
+    var $span = $('<span> </span>').width(size); 
+    // Replace the numerical value with stars
+    $(this).empty().append($span);
+  });
+}
+
+$(function() {
+  console.log("Calling stars()");
+  $('.results-content span.stars').stars();
+});
+</script>
+ </body>
+
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "processor",
+  "version": "1.0.0",
+  "description": "Processor for handling PRM Client Requests",
+  "scripts": {
+    "start": "nodemon processor.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "protobufjs": "^6.8.8",
+    "sawtooth-sdk": "^1.0.5",
+    "secp256k1": "^3.7.1",
+    "text-encoding": "^0.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.3"
+  }
+}
