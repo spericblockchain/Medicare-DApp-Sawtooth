@@ -13,7 +13,7 @@
     "hbs": "~4.0.4",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "sawtooth-sdk": "^1.0.5",
     "socket.io": "^2.3.0",
     "text-encoding": "^0.7.0"
